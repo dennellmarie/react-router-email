@@ -7,17 +7,22 @@ var Route = router.Route;
 var hashHistory = router.hashHistory;
 var IndexRoute = router.IndexRoute;
 
-var App = require('./components/app')
-var EmailListContainer = require('./components/EmailListContainer')
+var App = require('./components/app');
+var Home = require('./components/Home');
+var EmailListContainer = require('./components/EmailListContainer');
+var Email = require('./components/Email');
 
 
-console.log("here?")
 var routes = (
     <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={EmailListContainer} />
-          <Route path="/inbox" component={EmailListContainer} mailbox="inbox" />
-          <Route path="/spam" component={EmailListContainer} mailbox="spam" />   
+          <IndexRoute component={Home} />
+          <Route path="/inbox"> 
+          	<IndexRoute component={EmailListContainer} mailbox="inbox" />
+          	<Route path=":inboxId" component={Email} />
+          </Route>
+
+  		<Route path="/spam" component={EmailListContainer} mailbox="spam" />   
         </Route>
     </Router>
 );

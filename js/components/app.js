@@ -1,7 +1,9 @@
 var React = require('react');
-//{props.children}
+var router = require('react-router');
+var Link = router.Link;
+// {props.children}
 var App = function(props) {
-    console.log("here?")
+    
     return (
         <div>
             <h1>
