@@ -18,11 +18,11 @@ var routes = (
             <IndexRoute component={EmailListContainer} mailbox="inbox" />
             <Route path=":id" component={Email} mailbox="inbox" />
           </Route>
-         
-  		    <Route path="/spam" component={EmailListContainer} mailbox="spam" />  
-
+  		    <Route path="/spam" >
+            <IndexRoute component={EmailListContainer} mailbox="spam" />  
+            <Route path=":id" component={Email} mailbox="spam" />        
+          </Route>
         </Route>
-        
     </Router>
 );
 

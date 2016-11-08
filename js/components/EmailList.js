@@ -17,6 +17,7 @@ var EmailList = function(props) {
 					to={props.mail[key].to} 
 					title={props.mail[key].title} 
 					content={props.mail[key].content}
+					mailbox={props.mailbox}
 				/>
 			</li>
 		)
