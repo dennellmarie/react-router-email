@@ -1,10 +1,10 @@
 var React = require('react');
+var Mailbox = require('../Mailbox');
 
 var Email = function(props) {
-	console.log("?", props)
 	return (
 		<div>
-			{props.inboxId}
+			{Mailbox.inbox[props.params.id].content}
 		</div>
 	)
 };

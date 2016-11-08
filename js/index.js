@@ -12,16 +12,16 @@ var Home = require('./components/Home');
 var EmailListContainer = require('./components/EmailListContainer');
 var Email = require('./components/Email');
 
-
+//line 22 changed path so that it's the url + parameter
 var routes = (
     <Router history={hashHistory}>
         <Route path="/" component={App}>
           <IndexRoute component={Home} />
           <Route path="/inbox"> 
           	<IndexRoute component={EmailListContainer} mailbox="inbox" />
-          	<Route path=":inboxId" component={Email} />
+          	
           </Route>
-
+<Route path="/inbox/:id" component={Email} />
   		<Route path="/spam" component={EmailListContainer} mailbox="spam" />   
         </Route>
     </Router>

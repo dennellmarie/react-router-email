@@ -3,10 +3,10 @@ var MAILBOX = require('../Mailbox');
 var EmailList = require('./EmailList');
 
 var EmailListContainer = function(props) {
-	console.log(props.route.mailbox)
+	//console.log(props.route.mailbox)
 	
 	return <EmailList mail={MAILBOX[props.route.mailbox]} />
-}
+};
 	
 
 module.exports = EmailListContainer;
