@@ -1,6 +1,5 @@
-var React = require('react');
-var router = require('react-router');
-var Link = router.Link;
+import React, { PropTypes } from 'react';
+
 // {props.children}
 var App = function(props) {
     
@@ -16,5 +15,10 @@ var App = function(props) {
         </div>
     );
 };
+
+App.propTypes = {
+    // React.PropTypes
+    children: PropTypes.node.isRequired
+}
 
 module.exports = App;
